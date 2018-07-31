@@ -54,6 +54,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "vendor/normalize";
 
 // /*--------------------------------------------------------------
+// # Overall page structure
+// --------------------------------------------------------------*/
+@import "global/structure";
+
+// /*--------------------------------------------------------------
 // # Typography
 // --------------------------------------------------------------*/
 @import "global/typography";
@@ -61,9 +66,4 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 // /*--------------------------------------------------------------
 // # Elements
 // --------------------------------------------------------------*/
-// @import "shared/elements";
-
-/* Prevents FOUC */
-.js #rendered-php {
-	display: none;
-}
+@import "global/elements";

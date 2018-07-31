@@ -52,5 +52,5 @@ ReactDom.render(
 			</Switch>
 		</ConnectedRouter>
 	</Provider>,
-	document.getElementById('react-main')
+	document.getElementById('site')
 );
