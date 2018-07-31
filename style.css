@@ -66,9 +66,24 @@ article.empty {
   height: 30rem; }
 .commentBox {
   padding: 1em; }
-.copy {
+.site-footer {
+  color: #8c838e;
+  font-size: 16px;
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 1em;
+  padding: 20px 40px;
   text-align: center;
-  font-size: 0.75rem; }
+  width: 100%; }
+  .site-footer a {
+    color: #B53377;
+    border-color: transparent; }
+    .site-footer a:hover {
+      border-color: rgba(75, 69, 76, 0.5); }
+  .site-footer .emoji {
+    font-style: normal; }
+  .site-footer .site-info {
+    margin-top: 2px; }
 /*
 Theme Name: Bookish
 Theme URI: https://sarahmonster.github.io/bookish

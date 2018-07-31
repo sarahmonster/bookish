@@ -1,4 +1,31 @@
-.copy {
-  text-align: center;
-  font-size: 0.75rem;
+@import '../../../stylesheets/variables/_structure';
+@import '../../../stylesheets/variables/_colors';
+@import '../../../stylesheets/variables/_breakpoints';
+@import '../../../stylesheets/variables/_mixins';
+
+.site-footer {
+	color: lighten($color__text-main, 25%);
+	@include font-size(1);
+	font-style: italic;
+	margin-top: 1em;
+	padding: $size__site-gutter/2 $size__site-gutter;
+	text-align: center;
+	width: 100%;
+
+	a {
+		color: $color__primary-dark;
+		border-color: transparent;
+
+		&:hover {
+			border-color: transparentize($color__text-main, 0.5);
+		}
+	}
+
+	.emoji {
+		font-style: normal;
+	}
+
+	.site-info {
+		margin-top: 2px;
+	}
 }
