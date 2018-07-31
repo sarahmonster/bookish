@@ -1,0 +1,69 @@
+/*
+Theme Name: Bookish
+Theme URI: https://sarahmonster.github.io/bookish
+Author: sarah semark
+Author URI: https://triggersandsparks.com/
+Description: A ReactJS + Redux + Gutenberg theme!
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: phoenix
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Bookish is based on work by Jack Reichert (https://www.jackreichert.com/)
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+@import "variables/mixins";
+@import "variables/breakpoints";
+@import "variables/colors";
+@import "variables/typography";
+@import "variables/structure";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "vendor/normalize";
+
+// /*--------------------------------------------------------------
+// # Typography
+// --------------------------------------------------------------*/
+@import "global/typography";
+
+// /*--------------------------------------------------------------
+// # Elements
+// --------------------------------------------------------------*/
+// @import "shared/elements";
+
+/* Prevents FOUC */
+.js #rendered-php {
+	display: none;
+}

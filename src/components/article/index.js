@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import './style.scss';
 import PostTitle from '../post-title';
 import Content from '../content';
 import Meta from '../meta';

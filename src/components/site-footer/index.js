@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import './style.scss';
 import Menu from '../menu';
 
 export default class Footer extends Component {

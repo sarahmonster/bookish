@@ -1,0 +1,221 @@
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1.2);
+	line-height: $font__line-height-body;
+
+	@include tablet {
+		@include font-size(1.6);
+	}
+}
+
+.slabtexted .slabtext {
+    display: -moz-inline-box;
+    display: inline-block;
+    white-space: nowrap;
+    }
+.slabtextinactive .slabtext
+    {
+    display: inline;
+    white-space: normal;
+    font-size: 1em !important;
+    letter-spacing: inherit !important;
+    word-spacing: inherit !important;
+    *letter-spacing: normal !important;
+    *word-spacing: normal !important;
+    }
+.slabtextdone .slabtext
+    {
+    display: block;
+    }
+
+// Headings
+ //
+ // We use headings to make long pages of text (so basically every page ever) easier to scan through.
+ // As of right now, only styles for h1 to h3 are provided.
+ //
+ // markup:
+ // <h1>Heading one</h1>
+ // <h2>Heading two</h2>
+ // <h3>Heading three</h3>
+ //
+ // Styleguide 2.1
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight: 500;
+	line-height: 1.2;
+	margin: 0 0 $size__site-gutter/2;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+h1 {
+	color: $color__headings;
+	line-height: 1;
+	font-family: $font__display;
+	font-weight: 900;
+	@include font-size(2.6);
+
+	@include tablet {
+		@include font-size(4.8);
+	}
+
+	@include desktop {
+		@include font-size(7);
+	}
+
+	a {
+		color: $color__headings;
+	}
+}
+
+h2 {
+	color: $color__headings;
+	font-style: italic;
+	@include font-size(1.8);
+	font-weight: 100;
+	line-height: 1.2;
+	margin-top: 3em;
+
+	@include tablet {
+		@include font-size(2.4);
+	}
+}
+
+h3 {
+	color: $color__headings;
+	font-family: $font__accent;
+	@include font-size(0.8);
+	font-weight: 600;
+	letter-spacing: 2px;
+	margin: 0;
+	text-transform: uppercase;
+
+	@include tablet {
+		@include font-size(0.9);
+	}
+}
+
+/* Body copy */
+p {
+	margin: 0 0 $size__site-gutter*2;
+}
+
+// Drop caps
+ //
+ // Used to provide emphasis and visual interest. Applied to the first paragraph
+ // of every post by default, but can also be applied manually by adding the `cap` class.
+ //
+ // markup:
+ // <p class="cap">This is a paragraph using a drop-cap. It will look best when it's long enough that the text wraps.</p>
+ //
+ // Styleguide 2.2
+.cap,
+.single:not(.single-wanderlist-location) .entry-content p:first-of-type,
+.tax-talks .entry-content p:first-of-type {
+
+	&::first-letter {
+		color: $color__neutral;
+		display: block;
+		float: left;
+		@include font-size(7);
+		font-family: $font__main;
+		font-weight: 700;
+		//initial-letter: 3; // Support too patchy right now. :(
+		line-height: 0.6;
+		margin: 14px 5px 0 -5px;
+
+		@include tablet {
+			@include font-size(15);
+			// initial-letter: 4;
+			margin-top: 16px;
+		}
+	}
+
+	&::first-line {
+		font-variant: small-caps;
+		letter-spacing: 2px;
+	}
+}
+
+// Text elements
+ //
+ // Standard text elements.
+ //
+ // markup:
+ // <blockquote>Blockquotes look like this.</blockquote>
+ //
+ // Styleguide 2.3
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+	border-top: 1px solid lighten($color__text-main, 50%);
+  color: $silver;
+  display: block;
+  @include font-size(1.2);
+  font-style: italic;
+  margin: 0.25em auto;
+  padding-top: 0.5em;
+  text-align: left;
+
+  @include tablet {
+    @include font-size(1.4);
+  }
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: $color__background-pre;
+	font-family: $font__pre;
+	@include font-size(0.9375);
+	line-height: $font__line-height-pre;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var {
+	font-family: $font__code;
+	@include font-size(0.9375);
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted $color__border-abbr;
+	cursor: help;
+}
+
+mark, ins {
+	background: $color__background-ins;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+strong {
+	background: $color__highlight;
+	color: $color__text-main;
+	padding: 0 5px;
+}
+
+.caps {
+	font-variant: small-caps;
+	letter-spacing: 1px;
+	text-transform: lowercase;
+}

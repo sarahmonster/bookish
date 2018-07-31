@@ -1,0 +1,147 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin desaturate($dark: false) {
+	//filter: grayscale(100%) brightness(0.3) contrast(1.25);
+	filter: grayscale(100%) brightness(1.8) contrast(1.25);
+}
+
+@mixin box-shadow() {
+	box-shadow: 1px 1px 3px transparentize($color__neutral, 0.5);
+}
+
+// A card element, used to show contained bits of information.
+//
+// :hover             - Subtle hover highlight.
+// .stars-given       - A highlight indicating you’ve already given a star.
+// .stars-given:hover - Subtle hover highlight on top of stars-given styling.
+// .disabled          - Dims the button to indicate it cannot be used.
+//
+// Styleguide 3.1
+@mixin card() {
+	@include box-shadow;
+	background: $color__white;
+	margin: 0 0 $size__site-gutter/2 0;
+	padding: $size__site-gutter/2;
+}
+
+@mixin small-caps() {
+	font-family: $font__accent;
+	@include font-size(0.8);
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin: 0;
+	text-transform: uppercase;
+
+	@include tablet {
+		@include font-size(0.9);
+	}
+}
+
+
+// A skewed edge, used to make containers look funkier.
+// Courtesy of http://www.hongkiat.com/blog/skewed-edges-css/
+@mixin angled-edge($position, $angle){
+	width: 100%;
+	position: relative;
+
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		right: 0;
+		position: absolute;
+		background: inherit;
+		z-index: -1;
+		transition: ease all .5s;
+	}
+
+    @if $position == 'topleft' {
+		&::before {
+        	top: 0;
+        	transform-origin: right top;
+        	transform: skewY($angle);
+      	}
+
+		&::after {
+			display: none;
+		}
+	}
+
+    @if $position == 'topright' {
+		&::before {
+	        top: 0;
+	        transform-origin: left top;
+	        transform: skewY(-$angle);
+		}
+
+		&::after {
+			display: none;
+		}
+    }
+
+    @if $position == 'bottomleft' {
+		&::after {
+	        bottom: 0;
+	        transform-origin: right bottom;
+	        transform: skewY(-$angle);
+      	}
+
+		&::before {
+			display: none;
+		}
+	}
+
+    @if $position == 'bottomright' {
+		&::after {
+	        bottom: 0;
+	        transform-origin: left bottom;
+	        transform: skewY($angle);
+      	}
+
+		&::before {
+			display: none;
+		}
+    }
+}
+
+// Apply a rainbowy gradient to text elements.
+@mixin text-gradient {
+	background: $color__primary;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, $color__accent, $color__primary);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, $color__accent, $color__primary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+// Styling for page headers, used for pages as well as single entry pages.
+@mixin page-header {
+	@include angled-edge(bottomright, 4deg);
+	background: $color__black;
+	position: relative;
+	padding: $size__site-gutter/2;
+	z-index: 0;
+
+	@include tablet {
+		padding: $size__site-gutter*2;
+	}
+
+	.page-title,
+	.entry-title {
+		@include text-gradient;
+		padding: 35px 0; // Avoids text being cut off in FF.
+	}
+}

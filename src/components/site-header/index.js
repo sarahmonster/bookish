@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+import './style.scss';
 import Menu from '../menu';
 import Search from '../search';
 
 class Header extends Component {
     render() {
         return (
-            <header className="navbar navbar-expand-lg navbar-light bg-light">
+            <header className="site-header">
                 <h1 className="navbar-brand"><Link to='/'>{RT_API.siteName}</Link></h1>
                 <nav className="collapse navbar-collapse">
                     <Menu name="main_menu" />

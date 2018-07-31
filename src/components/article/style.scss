@@ -1,9 +1,4 @@
-@import "comments";
-@import "variables";
-
 article {
-	font-family: $font-body;
-
 	&.archive {
 		h1 {
 			font-size: 2rem;

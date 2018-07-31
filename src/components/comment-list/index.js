@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import {fetchComments} from '../../actions';
 
+import './style.scss';
 import Comment from '../comment';
 import CommentForm from '../comment-form';
 
