@@ -1,0 +1,68 @@
+@import '../../../assets/stylesheets/variables/_typography.scss';
+@import '../../../assets/stylesheets/variables/_colors.scss';
+@import '../../../assets/stylesheets/variables/_structure.scss';
+@import '../../../assets/stylesheets/variables/_breakpoints.scss';
+@import '../../../assets/stylesheets/variables/_mixins.scss';
+
+/* Navigation */
+.navigation-menu {
+	@include font-size(1);
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	font-family: $font__accent;
+	max-width: $size__content-width;
+	margin: 0 auto;
+	width: 100%;
+	vertical-align: top;
+	border-bottom: 2px solid $color__neutral;
+	padding-bottom: $size__site-gutter/4;
+	text-transform: uppercase;
+
+}
+
+.navigation-menu-container {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.navigation-menu-item {
+	margin: 0 $size__site-gutter/2 0 #{-$size__site-gutter/2};
+
+	&::before {
+		content: '\00b7';
+		display: inline;
+	}
+
+	&:first-child::before {
+		display: none;
+	}
+}
+
+.navigation-menu-link {
+	text-decoration: none;
+	color: $color__black;
+	display: inline-block;
+	padding: $size__site-gutter/8 $size__site-gutter/2;
+
+	&:hover {
+		color: $color__primary-dark;
+	}
+}
+
+/* On small screens, decrease space between menu items. */
+@include mobile {
+	.navigation-menu-item:first-of-type {
+		display: none; // temp hack! We should try a scrolly disappeary mobile menu here instead. Or icons.
+	}
+
+	.navigation-menu-item {
+		margin: 0 6px 0 -6px
+	}
+
+	.navigation-menu-link {
+		@include font-size(0.9);
+		padding: 5px 6px;
+	}
+}
