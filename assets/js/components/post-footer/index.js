@@ -37,8 +37,7 @@ class PostFooter extends Component {
         return this.shouldShowFooter() ?
             <footer className="card-footer">
                 {'undefined' !== typeof this.props.tagIds && this.props.tagIds.length > 0 && this.renderTags()}
-                <hr/>
-                {this.props.commentStatus !== 'closed' && <Comments pId={this.props.pId}/>}
+                { this.props.commentStatus !== 'closed' && this.props.showComments && <Comments pId={this.props.pId}/> }
             </footer> :
             <footer/>;
     }

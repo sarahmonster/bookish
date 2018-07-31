@@ -6,14 +6,14 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
 	devtool: 'source-map',
-	entry: './src/index.js',
+	entry: './assets/js/index.js',
 	output: {
 		path: __dirname,
 		filename: 'bundle.js',
 	},
 	resolve: {
     	extensions: [ '.ts', '.js', '*' ],
-    	modules: [ path.resolve(__dirname, "src"), "node_modules"]
+    	modules: [ path.resolve(__dirname, "assets/js"), "node_modules"]
 	},
 	module: {
 		rules: [

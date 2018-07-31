@@ -52,7 +52,7 @@ export default class Article extends Component {
 					</Content>
 				</div>
 				<PostFooter type={post.type} pId={post.id} isSingle={this.props.isSingle} tagIds={post.tags}
-				            commentStatus={post.comment_status}/>
+				            commentStatus={post.comment_status} showComments={ false }  />
 			</article>
 		);
 	}
