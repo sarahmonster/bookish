@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {fetchComments} from '../../actions';
+import {fetchComments} from 'actions';
 
 import './style.scss';
-import Comment from '../comment';
-import CommentForm from '../comment-form';
+import Comment from 'components/comment';
+import CommentForm from 'components/comment-form';
 
 class Comments extends Component {
 	componentWillMount() {

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 import './style.scss';
-import Menu from '../menu';
-import Search from '../search';
+import Menu from 'components/menu';
+import Search from 'components/search';
 
 class Header extends Component {
     render() {

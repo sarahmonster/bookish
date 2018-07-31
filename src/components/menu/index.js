@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { bindActionCreators } from 'redux'
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {fetchMenu} from '../../actions';
+
+import {fetchMenu} from 'actions';
 
 class Menu extends Component {
     componentDidMount () {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import './style.scss';
-import Menu from '../menu';
+import Menu from 'components/menu';
 
 export default class Footer extends Component {
     getYear() {

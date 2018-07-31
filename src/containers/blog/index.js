@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {connect, dispatch} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {fetchPosts, ROUTER} from '../../actions/index';
+import {fetchPosts, ROUTER} from 'actions/index';
 
-import Header from '../../components/site-header';
-import Main from '../../components/site-content';
-import Footer from '../../components/site-footer';
+import Header from 'components/site-header';
+import Main from 'components/site-content';
+import Footer from 'components/site-footer';
 
 class Blog extends Component {
     componentWillMount() {

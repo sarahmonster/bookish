@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
-import {fetchTaxInfo} from '../../actions';
+import {fetchTaxInfo} from 'actions';
 
-import Comments from '../comment-list';
+import Comments from 'components/comment-list';
 
 class PostFooter extends Component {
     componentWillMount() {

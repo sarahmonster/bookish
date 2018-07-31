@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {fetchPost} from '../../actions/index';
+import {fetchPost} from 'actions/index';
 
-import Header from '../../components/site-header';
-import Main from '../../components/site-content';
-import Footer from '../../components/site-footer';
+import Header from 'components/site-header';
+import Main from 'components/site-content';
+import Footer from 'components/site-footer';
 
 class Single extends Component {
     componentWillMount() {

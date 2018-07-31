@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import Article from '../article';
-import Empty from '../empty';
-import PageNav from '../page-nav';
+import Article from 'components/article';
+import Empty from 'components/empty';
+import PageNav from 'components/page-nav';
 
 class Main extends Component {
 	componentWillUpdate() {

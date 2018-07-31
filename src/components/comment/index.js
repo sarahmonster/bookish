@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import Content from '../content';
-import CommentForm from '../comment-form';
+import Content from 'components/content';
+import CommentForm from 'components/comment-form';
 
 export default class Comment extends Component {
     constructor() {

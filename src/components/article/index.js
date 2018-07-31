@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 
 import './style.scss';
-import PostTitle from '../post-title';
-import Content from '../content';
-import Meta from '../meta';
-import PostFooter from '../post-footer';
+import PostTitle from 'components/post-title';
+import Content from 'components/content';
+import Meta from 'components/meta';
+import PostFooter from 'components/post-footer';
 
 export default class Article extends Component {
 	getClasses() {
