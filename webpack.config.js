@@ -1,6 +1,9 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+
 module.exports = {
 	devtool: 'source-map',
 	entry: './src/index.js',
@@ -50,5 +53,15 @@ module.exports = {
 	},
 	plugins: [
 		new ExtractTextPlugin({filename: 'style.css', allChunks: true}),
+		new BrowserSyncPlugin({
+	      proxy: "https://triggersandsparks.test",
+		  server: false,
+		  host: null,
+		  notify: true,
+		  injectChanges: true,
+		  xip: false,
+		  open: true,
+		  startPath: false,
+	})
 	],
 };

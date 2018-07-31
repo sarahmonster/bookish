@@ -45,5 +45,9 @@
     "sass-loader": "^6.0",
     "style-loader": "^0.19",
     "webpack": "^3.10"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "browser-sync-webpack-plugin": "^2.2.2"
   }
 }
