@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Menu from '../containers/parts/menu';
+import Menu from '../menu';
 
 export default class Footer extends Component {
     getYear() {

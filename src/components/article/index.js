@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-import Title from './article/title';
-import Content from '../../containers/parts/content';
-import Meta from './article/meta';
-import PostFooter from '../../containers/parts/post-footer';
+import PostTitle from '../post-title';
+import Content from '../content';
+import Meta from '../meta';
+import PostFooter from '../post-footer';
 
 export default class Article extends Component {
 	getClasses() {
@@ -38,9 +38,9 @@ export default class Article extends Component {
 			<article className={this.getClasses()}>
 				<img src={this.getFeaturedImageSrc()} className="card-img-top img-fluid"/>
 				<div className="card-block">
-					<Title link={post.link} isSingle={this.props.isSingle}>
+					<PostTitle link={post.link} isSingle={this.props.isSingle}>
 						{post.title.rendered}
-					</Title>
+					</PostTitle>
 					<Meta categories={this.getCategories(post.categories)}
 					      date={post.date}
 					      formattedDate={post.formatted_date}
