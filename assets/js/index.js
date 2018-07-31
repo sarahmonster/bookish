@@ -1,4 +1,4 @@
-require('../assets/stylesheets/style.scss');
+require('../stylesheets/style.scss');
 
 import 'babel-polyfill';
 import React from 'react';
