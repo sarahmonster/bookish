@@ -1,0 +1,33 @@
+@import '../../../stylesheets/variables/structure';
+@import '../../../stylesheets/variables/colors';
+@import '../../../stylesheets/variables/breakpoints';
+@import '../../../stylesheets/variables/mixins';
+
+.article-header {
+	//@include page-header;
+	background: $color__black;
+	//border: 2px solid $color__neutral;
+	//text-align: center;
+	padding: $size__site-gutter*2 $size__site-gutter;
+	margin: $size__site-gutter*2 0;
+
+	.article-title {
+		@include text-gradient;
+		//padding: 35px 0; // Avoids text being cut off in FF.
+	}
+
+	.article-meta {
+		display: flex;
+		margin-bottom: $size__site-gutter/2;
+	}
+
+	.formatted-date {
+		color: $color__neutral-highlight;
+		margin-left: 10px;
+		margin-top: 5px;
+	}
+}
+
+.teensy {
+	width: 200px;
+}

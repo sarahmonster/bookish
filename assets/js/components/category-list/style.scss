@@ -1,0 +1,13 @@
+@import '../../../stylesheets/variables/structure';
+@import '../../../stylesheets/variables/colors';
+@import '../../../stylesheets/variables/breakpoints';
+@import '../../../stylesheets/variables/typography';
+@import '../../../stylesheets/variables/mixins';
+
+.category-link {
+	background: $color__accent;
+	color: $color__black;
+	@include small-caps;
+	text-decoration: none;
+	padding: 5px 10px;
+}
