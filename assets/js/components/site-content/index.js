@@ -36,8 +36,8 @@ class Main extends Component {
 
 	render() {
 		return (
-			<div>
-				<main id="postsContainer" className={this.getClasses()}>
+			<React.Fragment>
+				<main id="site-content" className={this.getClasses()}>
 					<ReactCSSTransitionGroup
 						transitionName="fade"
 						transitionEnterTimeout={500}
@@ -46,7 +46,7 @@ class Main extends Component {
 					</ReactCSSTransitionGroup>
 				</main>
 				<PageNav shouldRender={10 === this.props.posts.length}/>
-			</div>
+			</React.Fragment>
 		);
 	}
 }

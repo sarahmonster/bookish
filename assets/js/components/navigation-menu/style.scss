@@ -11,13 +11,13 @@
 	letter-spacing: 0.05em;
 	font-family: $font__accent;
 	max-width: $size__content-width;
-	margin: 0 auto;
-	width: 100%;
 	vertical-align: top;
-	border-bottom: 2px solid $color__neutral;
-	padding-bottom: $size__site-gutter/4;
+	padding: $size__site-gutter/2;
 	text-transform: uppercase;
 
+	@include tablet {
+		padding: $size__site-gutter/2 $size__site-gutter*2;
+	}
 }
 
 .navigation-menu-container {

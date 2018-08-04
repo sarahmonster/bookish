@@ -5,9 +5,12 @@
 @import '../../../stylesheets/variables/mixins';
 
 .article-content {
-	margin: 0 auto;
 	max-width: $size__content-width;
-	padding: $size__site-gutter/2;
+	padding: 0 $size__site-gutter/2;
+
+	@include tablet {
+		padding: 0 $size__site-gutter*2;
+	}
 }
 
 // Drop caps

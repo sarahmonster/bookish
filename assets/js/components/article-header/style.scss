@@ -8,12 +8,17 @@
 	background: $color__black;
 	//border: 2px solid $color__neutral;
 	//text-align: center;
-	padding: $size__site-gutter*2 $size__site-gutter;
-	margin: $size__site-gutter*2 0;
+	padding: $size__site-gutter $size__site-gutter/2;
+	margin-bottom: $size__site-gutter*2;
+
+	@include tablet {
+		padding: $size__site-gutter*2;
+	}
 
 	.article-title {
 		@include text-gradient;
 		//padding: 35px 0; // Avoids text being cut off in FF.
+		max-width: $size__content-width;
 	}
 
 	.article-meta {
