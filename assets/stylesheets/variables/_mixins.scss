@@ -4,6 +4,46 @@
 	font-size: $sizeValue * 1rem;
 }
 
+// Drop caps
+ //
+ // Used to provide emphasis and visual interest. Applied to the first paragraph
+ // of every post by default, but can also be applied manually by adding the `cap` class.
+ //
+ // markup:
+ // <p class="has-drop-cap">This is a paragraph using a drop-cap. It will look best when it's long enough that the text wraps.</p>
+ //
+ // Styleguide 2.2
+@mixin drop-cap {
+	&::first-letter {
+		color: $color__neutral;
+		display: block;
+		float: left;
+		@include font-size(7.3);
+		font-family: $font__display;
+		font-weight: 700;
+		//initial-letter: 3; // Support too patchy right now. :(
+		line-height: 0.6;
+		margin: 16px 10px 0 -5px;
+
+		@include tablet {
+			@include font-size(12.3);
+			// initial-letter: 4;
+			margin-top: 16px;
+		}
+	}
+
+	&::first-line {
+		font-variant: small-caps;
+		letter-spacing: 2px;
+	}
+
+	&::after {
+		display: table;
+		clear: both;
+		content: '';
+	}
+}
+
 // Center block
 @mixin center-block {
 	display: block;

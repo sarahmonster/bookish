@@ -88,41 +88,9 @@ p {
 	margin: 0 0 $size__site-gutter*2;
 }
 
-// Drop caps
- //
- // Used to provide emphasis and visual interest. Applied to the first paragraph
- // of every post by default, but can also be applied manually by adding the `cap` class.
- //
- // markup:
- // <p class="cap">This is a paragraph using a drop-cap. It will look best when it's long enough that the text wraps.</p>
- //
- // Styleguide 2.2
-.cap,
-.single:not(.single-wanderlist-location) .entry-content p:first-of-type,
-.tax-talks .entry-content p:first-of-type {
-
-	&::first-letter {
-		color: $color__neutral;
-		display: block;
-		float: left;
-		@include font-size(7);
-		font-family: $font__main;
-		font-weight: 700;
-		//initial-letter: 3; // Support too patchy right now. :(
-		line-height: 0.6;
-		margin: 14px 5px 0 -5px;
-
-		@include tablet {
-			@include font-size(15);
-			// initial-letter: 4;
-			margin-top: 16px;
-		}
-	}
-
-	&::first-line {
-		font-variant: small-caps;
-		letter-spacing: 2px;
-	}
+// Drop caps for older posts with manually applied drop caps.
+.cap {
+	@include drop-cap;
 }
 
 // Text elements

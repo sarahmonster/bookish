@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import Content from 'components/content';
+import ArticleContent from 'components/article-content';
 import CommentForm from 'components/comment-form';
 
 export default class Comment extends Component {
@@ -19,7 +19,7 @@ export default class Comment extends Component {
 
     render() {
         return <div className="card-block">
-            <Content>{this.props.comment.content.rendered}</Content>
+            <ArticleContent>{this.props.comment.content.rendered}</ArticleContent>
             <em>- {this.props.comment.author_name}</em>
             <Link
                 className="pull-right btn btn-sm"

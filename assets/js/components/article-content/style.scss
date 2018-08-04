@@ -1,0 +1,17 @@
+@import '../../../stylesheets/variables/structure';
+@import '../../../stylesheets/variables/colors';
+@import '../../../stylesheets/variables/breakpoints';
+@import '../../../stylesheets/variables/typography';
+@import '../../../stylesheets/variables/mixins';
+
+.article-content {
+	margin: 0 auto;
+	max-width: $size__content-width;
+	padding: $size__site-gutter/2;
+}
+
+// Drop caps
+.single:not(.single-wanderlist-location) .article-content p:first-of-type,
+.tax-talks .article-content p:first-of-type:not(.wp-block-caption) {
+	@include drop-cap;
+}
