@@ -7,10 +7,14 @@
 	color: lighten($color__text-main, 25%);
 	@include font-size(1);
 	font-style: italic;
-	margin-top: 1em;
-	padding: $size__site-gutter/2 $size__site-gutter;
-	text-align: center;
-	width: 100%;
+	padding-top: $size__site-gutter/2;
+	border-top: 2px solid $color__soft-black;
+	margin: 0 $size__site-gutter/2 0;
+
+	@include tablet {
+		margin: 0 $size__site-gutter*2 0;
+		padding-top: $size__site-gutter;
+	}
 
 	a {
 		color: $color__primary-dark;
@@ -23,9 +27,5 @@
 
 	.emoji {
 		font-style: normal;
-	}
-
-	.site-info {
-		margin-top: 2px;
 	}
 }

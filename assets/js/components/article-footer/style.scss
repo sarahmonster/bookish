@@ -4,9 +4,11 @@
 @import '../../../stylesheets/variables/mixins';
 
 .article-footer {
-	padding: $size__site-gutter $size__site-gutter/2;
-	margin-bottom: $size__site-gutter*2;
+	padding: 0 $size__site-gutter/2;
+	margin-bottom: $size__site-gutter;
 	display: flex;
+	max-width: 100%;
+	flex-wrap: wrap;
 
 	@include tablet {
 		padding: 0 $size__site-gutter*2;
