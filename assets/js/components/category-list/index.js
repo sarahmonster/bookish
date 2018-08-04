@@ -12,7 +12,7 @@ export default class CategoryList extends Component {
                 if ( 1 == categories.length || cat.slug !== 'uncategorized' ) {
                     return (
                         <span key={ cat.term_id }>
-                            <Link to={ this.getCategoryPath( cat.link ) } className="category-link">{ cat.name }</Link>
+                            <Link to={ this.getCategoryPath( cat.link ) } className="category-link">#{ cat.name }</Link>
                         </span>
                     );
                 }

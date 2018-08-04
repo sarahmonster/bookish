@@ -4,8 +4,8 @@
 @import '../../../stylesheets/variables/typography';
 @import '../../../stylesheets/variables/mixins';
 
-.category-link {
-	background: $color__accent;
+.tag-link {
+	background: $color__primary;
 	color: $color__black;
 	@include small-caps;
 	text-decoration: none;

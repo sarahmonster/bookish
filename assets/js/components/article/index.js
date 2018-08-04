@@ -40,7 +40,6 @@ export default class Article extends Component {
 					title = { post.title.rendered }
 					link = { post.link }
 					featuredImage = { this.getFeaturedImageSrc }
-					categories={ this.getCategories( post.categories ) }
 					date={ post.date }
 					formattedDate={ post.formatted_date }
 					postType={ post.type }
@@ -55,9 +54,10 @@ export default class Article extends Component {
 					type = { post.type }
 					pId = { post.id }
 					isSingle = { isSingle }
-					tagIds = { post.tags }
+					tags = { post.tags }
 				    commentStatus = { post.comment_status }
 				    showComments = {  false  }
+				    categories={ this.getCategories( post.categories ) }
 				 />
 			</article>
 		);

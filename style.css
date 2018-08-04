@@ -7,7 +7,7 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  max-width: 800px;
+  max-width: 860px;
   vertical-align: top;
   padding: 20px;
   text-transform: uppercase; }
@@ -77,37 +77,18 @@ article.empty {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    max-width: 800px; }
+    max-width: 860px; }
   .article-header .article-meta {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 20px; }
-  .article-header .formatted-date {
-    color: #E0DEE0;
-    margin-left: 10px;
-    margin-top: 5px; }
+    font-size: 32px;
+    font-size: 2rem;
+    font-style: italic;
+    color: #ffffff;
+    margin-bottom: 10px; }
 
 .teensy {
   width: 200px; }
-.category-link {
-  background: #61D2FF;
-  color: #232024;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 12.8px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin: 0;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 5px 10px; }
-  @media (min-width: 768px) {
-    .category-link {
-      font-size: 14.4px;
-      font-size: 0.9rem; } }
 .article-content {
-  max-width: 800px;
+  max-width: 860px;
   padding: 0 20px; }
   @media (min-width: 768px) {
     .article-content {
@@ -141,8 +122,49 @@ article.empty {
   display: table;
   clear: both;
   content: ''; }
-.commentBox {
-  padding: 1em; }
+.tag-link {
+  background: #F26BAF;
+  color: #232024;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 12.8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 5px; }
+  @media (min-width: 768px) {
+    .tag-link {
+      font-size: 14.4px;
+      font-size: 0.9rem; } }
+.category-link {
+  background: #61D2FF;
+  color: #232024;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 12.8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 5px; }
+  @media (min-width: 768px) {
+    .category-link {
+      font-size: 14.4px;
+      font-size: 0.9rem; } }
+.article-footer {
+  padding: 40px 20px;
+  margin-bottom: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media (min-width: 768px) {
+    .article-footer {
+      padding: 0 80px; } }
 .site-footer {
   color: #8c838e;
   font-size: 16px;

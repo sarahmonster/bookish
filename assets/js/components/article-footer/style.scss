@@ -1,0 +1,14 @@
+@import '../../../stylesheets/variables/structure';
+@import '../../../stylesheets/variables/colors';
+@import '../../../stylesheets/variables/breakpoints';
+@import '../../../stylesheets/variables/mixins';
+
+.article-footer {
+	padding: $size__site-gutter $size__site-gutter/2;
+	margin-bottom: $size__site-gutter*2;
+	display: flex;
+
+	@include tablet {
+		padding: 0 $size__site-gutter*2;
+	}
+}
