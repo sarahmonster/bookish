@@ -29,6 +29,7 @@ const store = createStore(
 	)
 );
 
+import Intro from './containers/intro';
 import Blog from './containers/blog';
 import Search from './containers/search';
 import Category from './containers/category';
@@ -39,7 +40,8 @@ ReactDom.render(
 	<Provider store={store}>
 		<ConnectedRouter history={history}>
 			<Switch>
-				<Route exact path="/" component={Blog}/>
+				<Route exact path="/" component={Intro}/>
+				<Route exact path="/stories" component={Blog}/>
 				<Route path="/page/:pageNum" component={Blog}/>
 				<Route path="/search/:term" component={Search}/>
 				<Route path="/category/:slug/page/:pageNum" component={Category}/>
