@@ -35,6 +35,8 @@ class Main extends Component {
 	}
 
 	render() {
+		const { posts, getClasses, renderPosts } = this.props;
+
 		return (
 			<React.Fragment>
 				<main id="site-content" className={this.getClasses()}>

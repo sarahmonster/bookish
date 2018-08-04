@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import {fetchPostsFromTax, getTaxIdFromSlug, ROUTER} from 'actions/index';
 
 import Header from 'components/site-header';
-import Main from 'components/site-content';
+import SiteContent from 'components/site-content';
 import Footer from 'components/site-footer';
 
 class Category extends Component {
@@ -32,31 +32,38 @@ class Category extends Component {
         });
     }
 
-    componentDidUpdate() {
-        let title = `${RT_API.siteName} - ${RT_API.siteDescription}`;
-        if (this.props.cat.length) {
-            document.title = title;
+    render() {
+        const { cat } = this.props;
+        let title = `Stories | ${ RT_API.siteName }`;
+        if ( cat.length ) {
+            title = `${ cat[0].name } | ${ RT_API.siteName }`;
         }
         document.title = title;
-    }
 
-    render() {
+
         return (
             <section className="container-fluid template-category">
-                <Header/>
-                <Main/>
-                <Footer/>
+                <Header />
+                <SiteContent />
+                <Footer />
             </section>
         );
     }
 }
 
-function mapStateToProps({cat}) {
-    return {cat};
+function mapStateToProps( { cat } ) {
+    return { cat };
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(Object.assign({fetchPostsFromTax, getTaxIdFromSlug, dispatch}), dispatch)
+function mapDispatchToProps( dispatch ) {
+    return bindActionCreators( Object.assign( {
+        fetchPostsFromTax,
+        getTaxIdFromSlug,
+        dispatch
+    } ), dispatch )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Category)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)( Category );

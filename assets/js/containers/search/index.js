@@ -27,11 +27,9 @@ class Search extends Component {
         }
     }
 
-    componentDidUpdate() {
-        document.title = `Search Results - ${RT_API.siteName}`;
-    }
-
     render() {
+        document.title = `Search Results | ${ RT_API.siteName }`;
+
         return (
             <section className="container-fluid template-search">
                 <Header searchTerm={this.props.match.params.term} isSearch={true}/>

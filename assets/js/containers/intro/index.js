@@ -6,11 +6,8 @@ import Footer from 'components/site-footer';
 import ArticleHeader from 'components/article-header';
 
 export default class Intro extends Component {
-    componentDidUpdate() {
-        document.title = `${RT_API.siteName} - ${RT_API.siteDescription}`;;
-    }
-
     render() {
+        document.title = `${ RT_API.siteName } - ${ RT_API.siteDescription }`;
         return (
             <section className="container-fluid template-single">
                 <Header/>

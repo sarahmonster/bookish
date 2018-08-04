@@ -27,11 +27,8 @@ class Blog extends Component {
         }
     }
 
-    componentDidUpdate() {
-        document.title = `${RT_API.siteName} - ${RT_API.siteDescription}`;
-    }
-
     render() {
+        document.title = `Stories | ${ RT_API.siteName }`;
         return (
             <section className="container-fluid template-blog">
                 <Header/>

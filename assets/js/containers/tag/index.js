@@ -31,15 +31,14 @@ class Category extends Component {
         });
     }
 
-    componentDidUpdate() {
-        let title = `${RT_API.siteName} - ${RT_API.siteDescription}`;
-        if (this.props.tags.length) {
-            title = `${this.props.tags[0].name} - ${RT_API.siteName}`;
+    render() {
+        const { tags } = this.props;
+        let title = `Stories | ${ RT_API.siteName }`;
+        if ( tags.length ) {
+            title = `${ tags[0].name } | ${ RT_API.siteName }`;
         }
         document.title = title;
-    }
 
-    render() {
         return (
             <section className="container-fluid template-tag">
                 <Header/>

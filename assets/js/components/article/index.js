@@ -34,6 +34,11 @@ export default class Article extends Component {
 
 	render() {
 		const { post, isSingle } = this.props;
+
+		if ( isSingle ) {
+			document.title = `${ post.title.rendered } | ${ RT_API.siteName }`;
+		}
+
 		return (
 			<article className={ this.getClasses() }>
 				<ArticleHeader
