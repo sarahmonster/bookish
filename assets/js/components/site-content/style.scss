@@ -1,0 +1,18 @@
+@import '../../../stylesheets/variables/structure';
+@import '../../../stylesheets/variables/colors';
+@import '../../../stylesheets/variables/breakpoints';
+@import '../../../stylesheets/variables/mixins';
+
+#site-content {
+	&.grid {
+		padding: $size__site-gutter $size__site-gutter/2;
+		margin-bottom: $size__site-gutter*2;
+
+		@include tablet {
+			padding: $size__site-gutter*2;
+			display: grid;
+			grid-template-column: 1fr 1fr;
+			grid-gap: $size__site-gutter;
+		}
+	}
+}

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import './style.scss';
 import Article from 'components/article';
 import Empty from 'components/empty';
 import PageNav from 'components/page-nav';
@@ -31,7 +32,7 @@ class Main extends Component {
 	}
 
 	getClasses() {
-		return this.isSingle() ? '' : 'card-columns';
+		return this.isSingle() ? '' : 'grid';
 	}
 
 	render() {
@@ -39,7 +40,7 @@ class Main extends Component {
 
 		return (
 			<React.Fragment>
-				<main id="site-content" className={this.getClasses()}>
+				<main id="site-content" className={ this.getClasses() }>
 					<ReactCSSTransitionGroup
 						transitionName="fade"
 						transitionEnterTimeout={500}

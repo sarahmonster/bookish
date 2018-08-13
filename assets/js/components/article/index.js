@@ -4,18 +4,25 @@ import './style.scss';
 import ArticleHeader from 'components/article-header';
 import ArticleContent from 'components/article-content';
 import ArticleFooter from 'components/article-footer';
+import ArticleExcerpt from 'components/article-excerpt';
 
 export default class Article extends Component {
 	getClasses() {
-		return this.props.isSingle ? 'single' : 'archive';
-	 }
+		return this.props.isSingle ? 'single' : 'excerpt';
+	}
 
 	getFeaturedImageSrc() {
-		if (this.props.post.featured_image_url) {
-			return this.props.isSingle ? this.props.post.featured_image_url.large : this.props.post.featured_image_url.full;
-		 } else {
-			return '';
-		 }
+		const { post, isSingle } = this.props;
+
+		if ( post.featured_image_url ) {
+			if ( isSingle ) {
+				return post.featured_image_url.large;
+			} else {
+				return post.featured_image_url.full;
+			}
+		} else {
+			return null;
+		}
 	 }
 
 	getCategories( cat_ids ) {
@@ -28,10 +35,6 @@ export default class Article extends Component {
 		 }
 	 }
 
-	getContent( post, isSingle ) {
-		return ( isSingle ) ? post.content.rendered : post.excerpt.rendered;
-	}
-
 	render() {
 		const { post, isSingle } = this.props;
 
@@ -41,29 +44,43 @@ export default class Article extends Component {
 
 		return (
 			<article className={ this.getClasses() }>
-				<ArticleHeader
-					title = { post.title.rendered }
-					link = { post.link }
-					featuredImage = { this.getFeaturedImageSrc }
-					date={ post.date }
-					formattedDate={ post.formatted_date }
-					postType={ post.type }
-					isSingle={ isSingle }
-				/>
+				{ isSingle &&
+					<React.Fragment>
+						<ArticleHeader
+							title = { post.title.rendered }
+							featuredImage = { this.getFeaturedImageSrc() }
+							date={ post.date }
+							formattedDate={ post.formatted_date }
+						/>
 
-				<ArticleContent isSingle={ isSingle }>
-					{ this.getContent( post, isSingle ) }
-				</ArticleContent>
+						<ArticleContent>
+							{ post.content.rendered }
+						</ArticleContent>
 
-				<ArticleFooter
-					type = { post.type }
-					pId = { post.id }
-					isSingle = { isSingle }
-					tags = { post.tags }
-				    commentStatus = { post.comment_status }
-				    showComments = {  false  }
-				    categories={ this.getCategories( post.categories ) }
-				 />
+						<ArticleFooter
+							type = { post.type }
+							pId = { post.id }
+							isSingle = { isSingle }
+							tags = { post.tags }
+						    commentStatus = { post.comment_status }
+						    showComments = {  false  }
+						    categories={ this.getCategories( post.categories ) }
+						 />
+					</React.Fragment>
+					}
+
+					{ !isSingle &&
+						<ArticleExcerpt
+							title = { post.title.rendered }
+							link = { post.link }
+							featuredImage = { this.getFeaturedImageSrc() }
+							date={ post.date }
+							formattedDate={ post.formatted_date }
+							postType={ post.type }
+						>
+							{ post.excerpt.rendered }
+						</ArticleExcerpt>
+					}
 			</article>
 		);
 	 }

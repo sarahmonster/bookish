@@ -49,6 +49,15 @@
     font-size: 14.4px;
     font-size: 0.9rem;
     padding: 5px 6px; } }
+#site-content.grid {
+  padding: 40px 20px;
+  margin-bottom: 80px; }
+  @media (min-width: 768px) {
+    #site-content.grid {
+      padding: 80px;
+      display: grid;
+      grid-template-column: 1fr 1fr;
+      grid-gap: 40px; } }
 article.single {
   margin: 0 auto; }
 
@@ -168,6 +177,18 @@ article.empty {
   @media (min-width: 768px) {
     .article-footer {
       padding: 0 80px; } }
+article.single {
+  margin: 0 auto; }
+
+article .wp-caption {
+  max-width: 100%; }
+
+article img {
+  max-width: 100%;
+  height: auto; }
+
+article.empty {
+  height: 30rem; }
 .site-footer {
   color: #8c838e;
   font-size: 16px;

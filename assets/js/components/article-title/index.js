@@ -10,15 +10,15 @@ export default class ArticleTitle extends Component {
     }
 
     render() {
-        const { link, isSingle, children } = this.props;
-        if ( isSingle ) {
-            return ( <h1 className="article-title" dangerouslySetInnerHTML={ {__html: children} } /> );
-        } else {
+        const { link, children } = this.props;
+        if ( link ) {
             return (
                 <Link className="article-title" to={ this.extractPath( link ) }>
                     <h1 dangerouslySetInnerHTML={ {__html: children} } />
                 </Link>
             );
+        } else {
+             return ( <h1 className="article-title" dangerouslySetInnerHTML={ {__html: children} } /> );
         }
     }
 }
