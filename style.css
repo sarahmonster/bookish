@@ -58,12 +58,6 @@
       display: grid;
       grid-template-column: 1fr 1fr;
       grid-gap: 40px; } }
-.article-single .wp-caption {
-  max-width: 100%; }
-
-.article-single img {
-  max-width: 100%;
-  height: auto; }
 .article-header {
   background: #232024;
   padding: 40px 20px;
@@ -128,6 +122,59 @@
   display: table;
   clear: both;
   content: ''; }
+
+.article-content a {
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: 0.05em 0 0 #ffffff, -0.05em 0 0 #ffffff, 0 0.05em 0 #ffffff, 0 -0.05em 0 #ffffff, 0.1em 0 0 #ffffff, -0.1em 0 0 #ffffff, 0 0.1em 0 #ffffff, 0 -0.1em 0 #ffffff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B53377), to(#B53377));
+  background-image: linear-gradient(to right, #B53377 0%, #B53377 100%);
+  background-repeat: repeat-x;
+  background-position: bottom 0.25em center;
+  background-size: 100% 0.1em; }
+  .article-content a:hover, .article-content a:focus, .article-content a:active {
+    background-image: -webkit-gradient(linear, left top, right top, from(#3C98BC), to(#3C98BC));
+    background-image: linear-gradient(to right, #3C98BC 0%, #3C98BC 100%); }
+
+.article-content img {
+  max-width: 100%;
+  height: auto; }
+
+.article-content figure,
+.article-content .wp-caption {
+  line-height: 0;
+  margin: 0 0 40px;
+  max-width: 100%; }
+  .article-content figure a,
+  .article-content .wp-caption a {
+    background: none;
+    padding: 0;
+    margin: 0;
+    display: block; }
+
+.article-content figcaption,
+.article-content .wp-caption-text {
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  color: #716E72;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0;
+  width: 100%; }
+
+@media (min-width: 768px) {
+  .article-content figure,
+  .article-content .wp-caption {
+    position: relative;
+    margin: 0 -40px 40px;
+    max-width: calc(100% + 80px); }
+  .article-content figcaption,
+  .article-content .wp-caption-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(35, 32, 36, 0.5);
+    color: #ffffff;
+    padding: 20px; } }
 .tag-link {
   background: #F26BAF;
   color: #232024;
@@ -668,6 +715,20 @@ img {
 table {
   margin: 0 0 1.5em;
   width: 100%; }
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: #B53377;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
+  a:hover, a:focus, a:active {
+    color: #3C98BC; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
 
 p.has-drop-cap:not(.focus)::first-letter {
   color: #A09CA0;

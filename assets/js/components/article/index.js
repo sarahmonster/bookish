@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import './style.scss';
 import ArticleHeader from 'components/article-header';
 import ArticleContent from 'components/article-content';
 import ArticleFooter from 'components/article-footer';
