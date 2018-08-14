@@ -4,15 +4,19 @@
 @import '../../../stylesheets/variables/mixins';
 
 .article-header {
-	//@include page-header;
 	background: $color__black;
-	//border: 2px solid $color__neutral;
-	//text-align: center;
 	padding: $size__site-gutter $size__site-gutter/2;
 	margin-bottom: $size__site-gutter*2;
+	position: relative;
+	z-index: 2;
 
 	@include tablet {
 		padding: $size__site-gutter*2;
+	}
+
+	@include desktop {
+		margin-left: -$size__site-gutter;
+		margin-right: 0;
 	}
 
 	.article-title {
@@ -27,8 +31,4 @@
 		color: $color__white;
 		margin-bottom: $size__site-gutter/4;
 	}
-}
-
-.teensy {
-	width: 200px;
 }

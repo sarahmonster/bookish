@@ -1,8 +1,4 @@
-article {
-	&.single {
-		margin: 0 auto;
-	}
-
+.article-single {
 	.wp-caption {
 		max-width: 100%;
 	}
@@ -10,9 +6,5 @@ article {
 	img {
 		max-width: 100%;
 		height: auto;
-	}
-
-	&.empty {
-		height: 30rem;
 	}
 }

@@ -22,16 +22,15 @@ class ArticleExcerpt extends Component {
 	}
 
 	render() {
-		const { link, title, featuredImage, children } = this.props;
+		const { link, title, children } = this.props;
 
         return (
         	<React.Fragment>
 	            <header className="article-excerpt-header">
-	           		<img className="teensy" src={ featuredImage } />
 	                <ArticleTitle link={ link }>{ title }</ArticleTitle>
 	            </header>
 
-				<div className="article-content"
+				<div className="article-excerpt-content"
 					dangerouslySetInnerHTML={ {__html: children } } onClick={ event => this.navigate( event ) }
 				/>
 			</React.Fragment>

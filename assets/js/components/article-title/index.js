@@ -14,7 +14,7 @@ export default class ArticleTitle extends Component {
         if ( link ) {
             return (
                 <Link className="article-title" to={ this.extractPath( link ) }>
-                    <h1 dangerouslySetInnerHTML={ {__html: children} } />
+                    <h2 dangerouslySetInnerHTML={ {__html: children} } />
                 </Link>
             );
         } else {

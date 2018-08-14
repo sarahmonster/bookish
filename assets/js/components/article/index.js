@@ -8,7 +8,7 @@ import ArticleExcerpt from 'components/article-excerpt';
 
 export default class Article extends Component {
 	getClasses() {
-		return this.props.isSingle ? 'single' : 'excerpt';
+		return this.props.isSingle ? 'article-single' : 'article-excerpt';
 	}
 
 	getFeaturedImageSrc() {

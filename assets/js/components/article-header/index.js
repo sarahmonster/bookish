@@ -6,7 +6,7 @@ import FormattedDate from 'components/formatted-date';
 
 export default class PageHeader extends Component {
     render() {
-        const { date, formattedDate, title, featuredImage } = this.props;
+        const { date, formattedDate, title } = this.props;
         return (
             <header className="article-header">
                 { date && formattedDate &&
@@ -16,9 +16,6 @@ export default class PageHeader extends Component {
                 }
 
                 <ArticleTitle>{ title }</ArticleTitle>
-                { featuredImage &&
-                    <img className="teensy" src={ featuredImage } />
-                }
             </header>
         );
     }

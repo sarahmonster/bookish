@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+import './style.scss';
+
 class PageNav extends Component {
     getPrevPage() {
         const pageNum = parseInt(this.props.routerMatch.params.pageNum) || 1;
@@ -35,7 +37,7 @@ class PageNav extends Component {
     render() {
         if (this.props.shouldRender) {
             return (
-                <div className="nav justify-content-center">
+                <div className="page-nav">
                     <div className="nav-item">
                         {(1 < this.props.routerMatch.params.pageNum) ?
                             <Link to={this.getPrevPage()} className="nav-link btn btn-primary">Previous</Link> : ''}

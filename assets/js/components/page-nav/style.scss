@@ -1,0 +1,16 @@
+@import '../../../stylesheets/variables/structure';
+@import '../../../stylesheets/variables/colors';
+@import '../../../stylesheets/variables/breakpoints';
+
+.page-nav {
+	padding: $size__site-gutter/4 $size__site-gutter/8;
+	border-top: 1px solid $color__soft-black;
+	margin: 0 $size__site-gutter/2 0;
+	display: flex;
+	justify-content: space-between;
+
+	@include tablet {
+		margin: 0 $size__site-gutter*2 0;
+		padding: $size__site-gutter/2 $size__site-gutter/8;
+	}
+}
