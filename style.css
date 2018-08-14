@@ -82,11 +82,15 @@
     -webkit-text-fill-color: transparent;
     max-width: 860px; }
   .article-header .article-meta {
-    font-size: 32px;
-    font-size: 2rem;
+    font-size: 25.6px;
+    font-size: 1.6rem;
     font-style: italic;
     color: #ffffff;
     margin-bottom: 10px; }
+    @media (min-width: 1024px) {
+      .article-header .article-meta {
+        font-size: 28.8px;
+        font-size: 1.8rem; } }
 .article-content {
   max-width: 860px;
   padding: 0 20px; }
