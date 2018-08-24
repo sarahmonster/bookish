@@ -46,6 +46,7 @@ export default class Article extends Component {
 				{ isSingle &&
 					<React.Fragment>
 						<ArticleHeader
+							type = { post.type }
 							title = { post.title.rendered }
 							featuredImage = { this.getFeaturedImageSrc() }
 							date={ post.date }

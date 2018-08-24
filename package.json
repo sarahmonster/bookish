@@ -23,6 +23,7 @@
     "babel-preset-react": "^6.24",
     "babel-preset-stage-2": "^6.24",
     "caniuse-lite": "^1.0",
+    "classnames": "^2.2.6",
     "connected-react-router": "^4.3",
     "css-loader": "^0.28",
     "cssnano": "^3.10",

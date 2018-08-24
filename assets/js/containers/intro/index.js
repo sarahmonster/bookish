@@ -12,7 +12,7 @@ export default class Intro extends Component {
             <section className="container-fluid template-single">
                 <Header/>
                 <main id="site-content" className="intro">
-                    <ArticleHeader title="Oh, hello there. I am Sarah. I make things &amp; I wander a lot. Sometimes I write long, rambling stories." />
+                    <ArticleHeader type="intro" title="Oh, hello there. I am Sarah. I make things &amp; I wander a lot. Sometimes I write long, rambling stories." />
                 </main>
                 <Footer/>
             </section>

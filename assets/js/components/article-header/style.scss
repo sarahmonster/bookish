@@ -3,7 +3,7 @@
 @import '../../../stylesheets/variables/breakpoints';
 @import '../../../stylesheets/variables/mixins';
 
-.article-header {
+.article-header.fancy {
 	background: $color__black;
 	padding: $size__site-gutter $size__site-gutter/2;
 	margin-bottom: $size__site-gutter*2;
@@ -34,5 +34,17 @@
 		@include desktop {
 			@include font-size(1.8);
 		}
+	}
+}
+
+.article-header.spacer {
+	height: $size__site-gutter*2;
+
+	@include tablet {
+		height: $size__site-gutter*4;
+	}
+
+	.article-title {
+		display: none;
 	}
 }
