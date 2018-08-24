@@ -51,6 +51,13 @@
 	}
 }
 
+// Currently selected page gets special styling.
+.navigation-menu-item.current {
+	.navigation-menu-link {
+		color: $color__primary-dark;
+	}
+}
+
 /* On small screens, decrease space between menu items. */
 @include mobile {
 	.navigation-menu-item:first-of-type {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 
 import './style.scss';
 import { fetchMenu } from 'actions';
@@ -16,11 +17,17 @@ class NavigationMenu extends Component {
     }
 
     renderMenu( menu ) {
+        const currentPage = this.props.location.pathname;
+
         if ( this.props.name === menu.name ) {
             return menu.items.map( item => {
+                const relativeUrl = NavigationMenu.getRelativeUrl( item.url );
+                const classes = classnames( 'navigation-menu-item', {
+                    'current': currentPage === relativeUrl,
+                } );
                 return (
-                    <li key={ item.ID } className="navigation-menu-item">
-                        <Link className="navigation-menu-link" to={ NavigationMenu.getRelativeUrl( item.url ) }>{ item.title }</Link>
+                    <li key={ item.ID } className={ classes }>
+                        <Link className="navigation-menu-link" to={ relativeUrl }>{ item.title }</Link>
                     </li>
                 );
             });
@@ -28,15 +35,15 @@ class NavigationMenu extends Component {
     }
 
     static getRelativeUrl( url ) {
-        if (url === window.location.origin) {
+        if ( url === window.location.origin ) {
             return '/';
         }
 
         return url.substr( window.location.origin.length );
     }
 
-    getClasses( location='' ){
-        switch(location) {
+    getClasses( location='' ) {
+        switch( location ) {
             case 'main_menu':
                 return 'navigation-menu-container main-navigation';
             case 'footer_menu':
@@ -70,7 +77,9 @@ function mapDispatchToProps( dispatch )  {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)( NavigationMenu );
+export default withRouter(
+    connect(
+        mapStateToProps,
+        mapDispatchToProps,
+    )( NavigationMenu )
+);
