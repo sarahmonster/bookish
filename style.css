@@ -39,6 +39,9 @@
   .navigation-menu-link:hover {
     color: #B53377; }
 
+.navigation-menu-item.current .navigation-menu-link {
+  color: #B53377; }
+
 /* On small screens, decrease space between menu items. */
 @media (max-width: 767px) {
   .navigation-menu-item:first-of-type {
@@ -58,20 +61,20 @@
       display: grid;
       grid-template-column: 1fr 1fr;
       grid-gap: 40px; } }
-.article-header {
+.article-header.fancy {
   background: #232024;
   padding: 40px 20px;
   margin-bottom: 80px;
   position: relative;
   z-index: 2; }
   @media (min-width: 768px) {
-    .article-header {
+    .article-header.fancy {
       padding: 80px; } }
   @media (min-width: 1024px) {
-    .article-header {
+    .article-header.fancy {
       margin-left: -40px;
       margin-right: 0; } }
-  .article-header .article-title {
+  .article-header.fancy .article-title {
     background: #F26BAF;
     /* fallback for old browsers */
     /* Chrome 10-25, Safari 5.1-6 */
@@ -81,16 +84,24 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     max-width: 860px; }
-  .article-header .article-meta {
+  .article-header.fancy .article-meta {
     font-size: 25.6px;
     font-size: 1.6rem;
     font-style: italic;
     color: #ffffff;
     margin-bottom: 10px; }
     @media (min-width: 1024px) {
-      .article-header .article-meta {
+      .article-header.fancy .article-meta {
         font-size: 28.8px;
         font-size: 1.8rem; } }
+
+.article-header.spacer {
+  height: 80px; }
+  @media (min-width: 768px) {
+    .article-header.spacer {
+      height: 160px; } }
+  .article-header.spacer .article-title {
+    display: none; }
 .article-content {
   max-width: 860px;
   padding: 0 20px; }
@@ -108,7 +119,17 @@
   font-family: lust-display, "Freight Text Pro", freight-text-pro, Georgia, serif;
   font-weight: 700;
   line-height: 0.6;
-  margin: 16px 10px 0 -5px; }
+  margin: 16px 10px 0 -5px;
+  background-color: #B53377;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F26BAF), to(#61D2FF));
+  background-image: linear-gradient(top, #F26BAF 0%, #61D2FF 100%);
+  background-position: 50% 0;
+  background-size: 200% 100%;
+  color: transparent;
+  -webkit-transition: .1s .2s;
+  transition: .1s .2s;
+  background-clip: text;
+  opacity: 0.5; }
   @media (min-width: 768px) {
     .single:not(.single-wanderlist-location) .article-content p:first-of-type::first-letter,
     .tax-talks .article-content p:first-of-type:not(.wp-block-caption)::first-letter {
@@ -128,17 +149,20 @@
   content: ''; }
 
 .article-content a {
-  display: inline-block;
-  text-decoration: none;
-  text-shadow: 0.05em 0 0 #ffffff, -0.05em 0 0 #ffffff, 0 0.05em 0 #ffffff, 0 -0.05em 0 #ffffff, 0.1em 0 0 #ffffff, -0.1em 0 0 #ffffff, 0 0.1em 0 #ffffff, 0 -0.1em 0 #ffffff;
-  background-image: -webkit-gradient(linear, left top, right top, from(#B53377), to(#B53377));
-  background-image: linear-gradient(to right, #B53377 0%, #B53377 100%);
-  background-repeat: repeat-x;
-  background-position: bottom 0.25em center;
-  background-size: 100% 0.1em; }
-  .article-content a:hover, .article-content a:focus, .article-content a:active {
-    background-image: -webkit-gradient(linear, left top, right top, from(#3C98BC), to(#3C98BC));
-    background-image: linear-gradient(to right, #3C98BC 0%, #3C98BC 100%); }
+  background-color: #B53377;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B53377), color-stop(50%, #3C98BC), color-stop(50%, transparent));
+  background-image: linear-gradient(left, #B53377 0%, #3C98BC 50%, transparent 50%);
+  background-position: 100% 0;
+  background-size: 200% 200%;
+  color: transparent;
+  -webkit-transition: .1s .2s;
+  transition: .1s .2s;
+  background-clip: text; }
+  .article-content a:hover {
+    background-position: 0 0;
+    color: transparent;
+    -webkit-transition: .2s 0;
+    transition: .2s 0; }
 
 .article-content img {
   max-width: 100%;
@@ -581,7 +605,17 @@ p {
   font-family: lust-display, "Freight Text Pro", freight-text-pro, Georgia, serif;
   font-weight: 700;
   line-height: 0.6;
-  margin: 16px 10px 0 -5px; }
+  margin: 16px 10px 0 -5px;
+  background-color: #B53377;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F26BAF), to(#61D2FF));
+  background-image: linear-gradient(top, #F26BAF 0%, #61D2FF 100%);
+  background-position: 50% 0;
+  background-size: 200% 100%;
+  color: transparent;
+  -webkit-transition: .1s .2s;
+  transition: .1s .2s;
+  background-clip: text;
+  opacity: 0.5; }
   @media (min-width: 768px) {
     .cap::first-letter {
       font-size: 196.8px;
@@ -743,7 +777,17 @@ p.has-drop-cap:not(.focus)::first-letter {
   font-family: lust-display, "Freight Text Pro", freight-text-pro, Georgia, serif;
   font-weight: 700;
   line-height: 0.6;
-  margin: 16px 10px 0 -5px; }
+  margin: 16px 10px 0 -5px;
+  background-color: #B53377;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F26BAF), to(#61D2FF));
+  background-image: linear-gradient(top, #F26BAF 0%, #61D2FF 100%);
+  background-position: 50% 0;
+  background-size: 200% 100%;
+  color: transparent;
+  -webkit-transition: .1s .2s;
+  transition: .1s .2s;
+  background-clip: text;
+  opacity: 0.5; }
   @media (min-width: 768px) {
     p.has-drop-cap:not(.focus)::first-letter {
       font-size: 196.8px;

@@ -24,6 +24,14 @@
 		//initial-letter: 3; // Support too patchy right now. :(
 		line-height: 0.6;
 		margin: 16px 10px 0 -5px;
+		    background-color: $color__link;
+    background-image: linear-gradient(top, $color__primary 0%, $color__accent 100%);
+    background-position: 50% 0;
+    background-size: 200% 100%;
+    color: transparent;
+    transition: .1s .2s;
+    background-clip: text;
+    opacity: 0.5;
 
 		@include tablet {
 			@include font-size(12.3);
@@ -184,4 +192,43 @@
 		@include text-gradient;
 		padding: 35px 0; // Avoids text being cut off in FF.
 	}
+}
+
+// Better text underlines, because that's how I roll.
+@mixin underline($line-color, $text-color) {
+	text-decoration: none;
+	text-shadow: .03em 0 $text-color, -.03em 0 $text-color, 0 .03em $text-color, 0 -.03em $text-color, .06em 0 $text-color, -.06em 0 $text-color, .09em 0 $text-color, -.09em 0 $text-color, .12em 0 $text-color, -.12em 0 $text-color, .15em 0 $text-color, -.15em 0 $text-color;
+	background-image:
+		linear-gradient($text-color, $text-color),
+		linear-gradient($text-color, $text-color),
+		linear-gradient($line-color, $line-color);
+	background-size: .05em 2px, .05em 2px, 2px 2px;
+	background-repeat: no-repeat, no-repeat, repeat-x;
+	background-position: 0% 90%, 100% 90%, 0% 95%;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-image: linear-gradient(to right, $color__link-hover 0%, $color__link-hover 100%);
+		background-size: 2px 2px;
+		background-repeat: repeat-x;
+		background-position: 0% 95%;
+		//text-shadow: none;
+	}
+}
+
+@mixin link-gradient() {
+    background-color: $color__link;
+    background-image: linear-gradient(left, $color__link 0%, $color__link-hover 50%, transparent 50%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    color: transparent;
+    transition: .1s .2s;
+    background-clip: text;
+
+  	&:hover {
+	    background-position: 0 0;
+	    color: transparent;
+	    transition: .2s 0;
+  	}
 }

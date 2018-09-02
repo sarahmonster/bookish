@@ -24,23 +24,8 @@
 // It's a bit fragile so we're limiting it to in-text links.
 // https://impossiblycreative.com/more-accessible-links-gradients/
 .article-content a {
-    display: inline-block;
-    text-decoration: none;
-    text-shadow:
-        0.05em 0 0 $white, -0.05em 0 0 $white,
-        0 0.05em 0 $white, 0 -0.05em 0 $white,
-        0.1em 0 0 $white, -0.1em 0 0 $white,
-        0 0.1em 0 $white, 0 -0.1em 0 $white;
-    background-image: linear-gradient(to right, $color__link 0%, $color__link 100%);
-    background-repeat: repeat-x;
-    background-position: bottom 0.25em center;
-    background-size: 100% 0.1em;
-
-	&:hover,
-	&:focus,
-	&:active {
-		background-image: linear-gradient(to right, $color__link-hover 0%, $color__link-hover 100%);
-	}
+	//@include underline($color__link, $color__white);
+	@include link-gradient;
 }
 
 // Images
