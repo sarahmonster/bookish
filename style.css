@@ -120,7 +120,7 @@
     .article-content {
       padding: 0 80px; } }
 
-.single:not(.single-wanderlist-location) .article-content p:first-of-type::first-letter,
+.article-single:not(.single-wanderlist-location) .article-content > p:first-of-type::first-letter,
 .tax-talks .article-content p:first-of-type:not(.wp-block-caption)::first-letter {
   color: #A09CA0;
   display: block;
@@ -132,18 +132,18 @@
   line-height: 0.6;
   margin: 16px 10px 0 -5px; }
   @media (min-width: 768px) {
-    .single:not(.single-wanderlist-location) .article-content p:first-of-type::first-letter,
+    .article-single:not(.single-wanderlist-location) .article-content > p:first-of-type::first-letter,
     .tax-talks .article-content p:first-of-type:not(.wp-block-caption)::first-letter {
       font-size: 196.8px;
       font-size: 12.3rem;
       margin-top: 16px; } }
 
-.single:not(.single-wanderlist-location) .article-content p:first-of-type::first-line,
+.article-single:not(.single-wanderlist-location) .article-content > p:first-of-type::first-line,
 .tax-talks .article-content p:first-of-type:not(.wp-block-caption)::first-line {
   font-variant: small-caps;
   letter-spacing: 2px; }
 
-.single:not(.single-wanderlist-location) .article-content p:first-of-type::after,
+.article-single:not(.single-wanderlist-location) .article-content > p:first-of-type::after,
 .tax-talks .article-content p:first-of-type:not(.wp-block-caption)::after {
   display: table;
   clear: both;

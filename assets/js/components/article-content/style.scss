@@ -14,7 +14,7 @@
 }
 
 // Drop caps
-.single:not(.single-wanderlist-location) .article-content p:first-of-type,
+.article-single:not(.single-wanderlist-location) .article-content > p:first-of-type,
 .tax-talks .article-content p:first-of-type:not(.wp-block-caption) {
 	@include drop-cap;
 }
