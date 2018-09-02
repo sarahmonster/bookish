@@ -24,14 +24,6 @@
 		//initial-letter: 3; // Support too patchy right now. :(
 		line-height: 0.6;
 		margin: 16px 10px 0 -5px;
-		    background-color: $color__link;
-    background-image: linear-gradient(top, $color__primary 0%, $color__accent 100%);
-    background-position: 50% 0;
-    background-size: 200% 100%;
-    color: transparent;
-    transition: .1s .2s;
-    background-clip: text;
-    opacity: 0.5;
 
 		@include tablet {
 			@include font-size(12.3);
@@ -170,7 +162,7 @@
 @mixin text-gradient {
 	background: $color__primary;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to bottom, $color__accent, $color__primary);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, $color__accent, $color__primary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(to left, $color__accent, $color__primary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }

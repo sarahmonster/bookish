@@ -2,37 +2,38 @@
 @import '../../../stylesheets/variables/colors';
 @import '../../../stylesheets/variables/breakpoints';
 @import '../../../stylesheets/variables/mixins';
+@import '../../../stylesheets/variables/typography';
 
 .article-header.fancy {
-	background: $color__black;
-	padding: $size__site-gutter $size__site-gutter/2;
-	margin-bottom: $size__site-gutter*2;
-	position: relative;
-	z-index: 2;
-
-	@include tablet {
-		padding: $size__site-gutter*2;
-	}
-
-	@include desktop {
-		margin-left: -$size__site-gutter;
-		margin-right: 0;
-	}
+	padding: $size__site-gutter/2 $size__site-gutter/2;
+	text-align: center;
+	border-bottom: 2px solid $color__neutral;
+	margin: $size__site-gutter*2 0;
 
 	.article-title {
 		@include text-gradient;
-		//padding: 35px 0; // Avoids text being cut off in FF.
-		max-width: $size__content-width;
 	}
 
 	.article-meta {
-		@include font-size(1.6);
-		font-style: italic;
-		color: $color__white;
-		margin-bottom: $size__site-gutter/4;
+		@include small-caps;
+		color: $color__neutral-text;
+		margin-bottom: $size__site-gutter;
+		position: relative;
 
-		@include desktop {
-			@include font-size(1.8);
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 50%;
+			border-bottom: 2px solid $color__neutral;
+		}
+
+		.formatted-date {
+			padding: 0 20px;
+			background: $color__background-body;
+			position: relative;
 		}
 	}
 }
