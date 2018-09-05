@@ -67,8 +67,8 @@
 .article-header.fancy {
   padding: 20px 20px;
   text-align: center;
-  border-bottom: 2px solid #A09CA0;
-  margin: 80px 0; }
+  border-bottom: 3px solid #A09CA0;
+  margin: 80px 0 160px; }
   .article-header.fancy .article-title {
     background: #F26BAF;
     /* fallback for old browsers */
@@ -272,12 +272,13 @@
   font-size: 1rem;
   font-style: italic;
   padding-top: 20px;
-  border-top: 2px solid #4B454C;
-  margin: 0 20px 0; }
+  border-top: 2px solid #A09CA0;
+  margin: 0 20px 0;
+  text-align: center; }
   @media (min-width: 768px) {
     .site-footer {
       margin: 0 80px 0;
-      padding-top: 40px; } }
+      padding-top: 20px; } }
   .site-footer a {
     color: #B53377;
     border-color: transparent; }

@@ -7,8 +7,8 @@
 .article-header.fancy {
 	padding: $size__site-gutter/2 $size__site-gutter/2;
 	text-align: center;
-	border-bottom: 2px solid $color__neutral;
-	margin: $size__site-gutter*2 0;
+	border-bottom: 3px solid $color__neutral;
+	margin: $size__site-gutter*2 0 $size__site-gutter*4;
 
 	.article-title {
 		@include text-gradient;
