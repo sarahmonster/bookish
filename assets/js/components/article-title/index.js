@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import './style.scss';
+
 export default class ArticleTitle extends Component {
     extractPath( link ) {
         const url = document.createElement('a');
@@ -13,9 +15,9 @@ export default class ArticleTitle extends Component {
         const { link, children } = this.props;
         if ( link ) {
             return (
-                <Link className="article-title" to={ this.extractPath( link ) }>
-                    <h2 dangerouslySetInnerHTML={ {__html: children} } />
-                </Link>
+                <h2>
+                    <Link className="article-title" to={ this.extractPath( link ) } dangerouslySetInnerHTML={ {__html: children} } />
+                </h2>
             );
         } else {
              return ( <h1 className="article-title" dangerouslySetInnerHTML={ {__html: children} } /> );

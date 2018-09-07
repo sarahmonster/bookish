@@ -1,0 +1,7 @@
+@import '../../../stylesheets/variables/colors';
+@import '../../../stylesheets/variables/mixins';
+
+a.article-title {
+	//@include underline($color__link, $color__white);
+	@include link-gradient;
+}
