@@ -5,19 +5,17 @@
 @import '../../../stylesheets/variables/typography';
 
 .article-header.fancy {
-	padding: $size__site-gutter/2 $size__site-gutter/2;
 	text-align: center;
 	border-bottom: 3px solid $color__neutral;
-	margin: $size__site-gutter*2 0 $size__site-gutter*4;
+	margin: $size__site-gutter $size__site-gutter/2 $size__site-gutter;
 
-	.article-title {
-		@include text-gradient;
+	@include tablet {
+		margin: $size__site-gutter*3 $size__site-gutter/2 $size__site-gutter*3;
 	}
 
 	.article-meta {
 		@include small-caps;
 		color: $color__neutral-text;
-		margin-bottom: $size__site-gutter;
 		position: relative;
 
 		&::before {
@@ -34,6 +32,19 @@
 			padding: 0 20px;
 			background: $color__background-body;
 			position: relative;
+		}
+	}
+
+	.article-title {
+		@include text-gradient;
+	}
+
+	.article-meta, 
+	.article-title {
+		margin-bottom: $size__site-gutter/2;
+
+		@include tablet {
+			margin-bottom: $size__site-gutter;
 		}
 	}
 }
