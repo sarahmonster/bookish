@@ -1,5 +1,6 @@
 .site-branding, .site-logo-link {
   display: none; }
+@charset "UTF-8";
 /* Navigation */
 .navigation-menu {
   font-size: 16px;
@@ -7,7 +8,8 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  max-width: 960px;
+  width: 960px;
+  max-width: 100%;
   vertical-align: top;
   padding: 20px;
   text-transform: uppercase; }
@@ -19,12 +21,16 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   list-style: none;
   margin: 0;
-  padding-left: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  padding-left: 0; }
+  @media (min-width: 768px) {
+    .navigation-menu-container {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
 
 .navigation-menu-item {
   margin: 0 20px 0 -20px; }
@@ -45,10 +51,42 @@
 .navigation-menu-item.current .navigation-menu-link {
   color: #B53377; }
 
+/*
+[1]: All items a forced onto a single line, causing the overflow when necessary.
+[2]: Automatic overflow means a scroll bar won’t be present if it isn’t needed
+[3]: Make it smooth scrolling on iOS devices
+[4]: Hide the ugly scrollbars in Edge until the scrollable area is hovered
+[5]: Hide the scroll bar in WebKit browsers
+*/
+.navigation-menu {
+  white-space: nowrap;
+  /* [1] */
+  overflow-x: auto;
+  /* [2] */
+  -webkit-overflow-scrolling: touch;
+  /* [3] */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  /* [4] */ }
+
+/* [5] */
+.navigation-menu::-webkit-scrollbar {
+  display: none; }
+
 /* On small screens, decrease space between menu items. */
 @media (max-width: 767px) {
-  .navigation-menu-item:first-of-type {
-    display: none; }
+  .navigation-menu {
+    position: relative; }
+    .navigation-menu::after {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 40px;
+      height: 100%;
+      display: block;
+      content: '';
+      background-image: -webkit-gradient(linear, left top, right top, color-stop(0, transparent), to(white));
+      background-image: linear-gradient(to right, transparent 0, white 100%); }
   .navigation-menu-item {
     margin: 0 6px 0 -6px; }
   .navigation-menu-link {
@@ -121,6 +159,9 @@
       height: 160px; } }
   .article-header.spacer .article-title {
     display: none; }
+
+.intro .article-header {
+  border: 0; }
 a.article-title {
   background-color: #B53377;
   background-image: -webkit-gradient(linear, left top, right top, from(#B53377), color-stop(50%, #3C98BC), color-stop(50%, transparent));
@@ -295,7 +336,6 @@ a.article-title {
   font-size: 1rem;
   font-style: italic;
   padding-top: 20px;
-  border-top: 2px solid #A09CA0;
   margin: 0 20px 0;
   text-align: center; }
   @media (min-width: 768px) {

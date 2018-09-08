@@ -10,7 +10,8 @@
 	font-weight: 600;
 	letter-spacing: 0.05em;
 	font-family: $font__accent;
-	max-width: $size__content-width;
+	width: $size__content-width;
+	max-width: 100%;
 	vertical-align: top;
 	padding: $size__site-gutter/2;
 	text-transform: uppercase;
@@ -22,10 +23,14 @@
 
 .navigation-menu-container {
 	display: flex;
+	flex-wrap:  nowrap;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-	justify-content: center;
+
+	@include tablet {
+		justify-content: center;
+	}
 }
 
 .navigation-menu-item {
@@ -59,10 +64,43 @@
 	}
 }
 
+
+/*
+[1]: All items a forced onto a single line, causing the overflow when necessary.
+[2]: Automatic overflow means a scroll bar won’t be present if it isn’t needed
+[3]: Make it smooth scrolling on iOS devices
+[4]: Hide the ugly scrollbars in Edge until the scrollable area is hovered
+[5]: Hide the scroll bar in WebKit browsers
+*/
+.navigation-menu {
+  white-space: nowrap; /* [1] */
+  overflow-x: auto; /* [2] */
+  -webkit-overflow-scrolling: touch; /* [3] */
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */
+}
+
+/* [5] */
+.navigation-menu::-webkit-scrollbar {
+  display: none;
+}
+
+
 /* On small screens, decrease space between menu items. */
 @include mobile {
-	.navigation-menu-item:first-of-type {
-		display: none; // temp hack! We should try a scrolly disappeary mobile menu here instead. Or icons.
+	.navigation-menu {
+		position: relative;
+
+		&::after {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 40px;
+			height: 100%;
+			display: block;
+			content: '';
+			background-image: linear-gradient(to right, transparent 0, white 100%);
+		}
 	}
 
 	.navigation-menu-item {
