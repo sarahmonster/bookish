@@ -28,7 +28,7 @@ class TagList extends Component {
 
         return <div className="tags nav">
             { tags.map(tag => {
-                return <Link className="tag-link" to={ `/tag/${tag.name}` } key={ tag.id }>#{ tag.name }</Link>
+                return <a className="tag-link" href={ `/tag/${tag.name}` } key={ tag.id }>#{ tag.name }</a>
             } ) }
         </div>;
     }
