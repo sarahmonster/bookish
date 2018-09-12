@@ -285,6 +285,8 @@ a.article-title {
     .tag-link {
       font-size: 14.4px;
       font-size: 0.9rem; } }
+  .tag-link:hover {
+    color: #ffffff; }
 .category-link {
   background: #61D2FF;
   color: #232024;
@@ -302,6 +304,8 @@ a.article-title {
     .category-link {
       font-size: 14.4px;
       font-size: 0.9rem; } }
+  .category-link:hover {
+    color: #ffffff; }
 .article-footer {
   padding: 0 20px;
   margin-bottom: 40px;

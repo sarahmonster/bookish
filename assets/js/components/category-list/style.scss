@@ -11,4 +11,8 @@
 	text-decoration: none;
 	padding: 5px 10px;
 	margin-right: 5px;
+
+	&:hover {
+		color: $color__white;
+	}
 }
