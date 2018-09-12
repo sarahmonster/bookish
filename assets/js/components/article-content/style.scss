@@ -19,7 +19,6 @@
 	@include drop-cap;
 }
 
-
 // Use a fancy-pants underline for more accessible links (and more typographically attractive ones, too.)
 // It's a bit fragile so we're limiting it to in-text links.
 // https://impossiblycreative.com/more-accessible-links-gradients/
@@ -76,4 +75,17 @@
 		    padding: $size__site-gutter/2;
 		}
 	}
+}
+
+// Style Wanderlist text snippets
+.wanderlist-country-count {
+	color: $color__accent-alt;
+	font-weight: bolder;
+	font-size: 1.5em;
+	line-height: 1;
+}
+
+.wanderlist-current-location {
+	color: $color__accent-alt;
+	font-style: italic;
 }

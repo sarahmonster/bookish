@@ -265,6 +265,16 @@ a.article-title {
     background: rgba(35, 32, 36, 0.5);
     color: #ffffff;
     padding: 20px; } }
+
+.wanderlist-country-count {
+  color: #3C98BC;
+  font-weight: bolder;
+  font-size: 1.5em;
+  line-height: 1; }
+
+.wanderlist-current-location {
+  color: #3C98BC;
+  font-style: italic; }
 .tag-link {
   background: #F26BAF;
   color: #232024;
