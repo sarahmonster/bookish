@@ -1,6 +1,5 @@
 .site-branding, .site-logo-link {
   display: none; }
-@charset "UTF-8";
 /* Navigation */
 .navigation-menu {
   font-size: 16px;
@@ -11,7 +10,7 @@
   width: 960px;
   max-width: 100%;
   vertical-align: top;
-  padding: 20px;
+  padding: 20px 0;
   text-transform: uppercase; }
   @media (min-width: 768px) {
     .navigation-menu {
@@ -51,44 +50,40 @@
 .navigation-menu-item.current .navigation-menu-link {
   color: #B53377; }
 
-/*
-[1]: All items a forced onto a single line, causing the overflow when necessary.
-[2]: Automatic overflow means a scroll bar won’t be present if it isn’t needed
-[3]: Make it smooth scrolling on iOS devices
-[4]: Hide the ugly scrollbars in Edge until the scrollable area is hovered
-[5]: Hide the scroll bar in WebKit browsers
-*/
-.navigation-menu {
-  white-space: nowrap;
-  /* [1] */
-  overflow-x: auto;
-  /* [2] */
-  -webkit-overflow-scrolling: touch;
-  /* [3] */
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  /* [4] */ }
-
-/* [5] */
-.navigation-menu::-webkit-scrollbar {
-  display: none; }
-
 /* On small screens, decrease space between menu items. */
 @media (max-width: 767px) {
   .navigation-menu {
-    position: relative; }
-    .navigation-menu::after {
+    position: relative;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar; }
+    .navigation-menu::after, .navigation-menu::before {
       position: fixed;
       top: 0;
-      right: 0;
       bottom: 0;
-      width: 40px;
-      height: 100%;
+      width: 25px;
+      height: 120px;
       display: block;
-      content: '';
+      content: ''; }
+    .navigation-menu::before {
+      background-image: -webkit-gradient(linear, right top, left top, color-stop(0, transparent), to(white));
+      background-image: linear-gradient(to left, transparent 0, white 100%);
+      left: 0; }
+    .navigation-menu::after {
       background-image: -webkit-gradient(linear, left top, right top, color-stop(0, transparent), to(white));
-      background-image: linear-gradient(to right, transparent 0, white 100%); }
+      background-image: linear-gradient(to right, transparent 0, white 100%);
+      right: 0; }
+    .navigation-menu .navigation-menu::-webkit-scrollbar {
+      display: none; }
   .navigation-menu-item {
     margin: 0 6px 0 -6px; }
+    .navigation-menu-item:first-of-type {
+      padding-left: 20px;
+      margin-left: 0; }
+    .navigation-menu-item:last-of-type {
+      padding-right: 20px;
+      margin-right: 0; }
   .navigation-menu-link {
     font-size: 14.4px;
     font-size: 0.9rem;

@@ -13,7 +13,7 @@
 	width: $size__content-width;
 	max-width: 100%;
 	vertical-align: top;
-	padding: $size__site-gutter/2;
+	padding: $size__site-gutter/2 0;
 	text-transform: uppercase;
 
 	@include tablet {
@@ -64,47 +64,53 @@
 	}
 }
 
-
-/*
-[1]: All items a forced onto a single line, causing the overflow when necessary.
-[2]: Automatic overflow means a scroll bar won’t be present if it isn’t needed
-[3]: Make it smooth scrolling on iOS devices
-[4]: Hide the ugly scrollbars in Edge until the scrollable area is hovered
-[5]: Hide the scroll bar in WebKit browsers
-*/
-.navigation-menu {
-  white-space: nowrap; /* [1] */
-  overflow-x: auto; /* [2] */
-  -webkit-overflow-scrolling: touch; /* [3] */
-  -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */
-}
-
-/* [5] */
-.navigation-menu::-webkit-scrollbar {
-  display: none;
-}
-
-
 /* On small screens, decrease space between menu items. */
 @include mobile {
 	.navigation-menu {
 		position: relative;
+		white-space: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
 
-		&::after {
+		&::after,
+		&::before {
 			position: fixed;
 			top: 0;
-			right: 0;
 			bottom: 0;
-			width: 40px;
-			height: 100%;
+			width: 25px;
+			height: 120px;
 			display: block;
 			content: '';
+		}
+
+		&::before {
+			background-image: linear-gradient(to left, transparent 0, white 100%);
+			left: 0;
+		}
+
+		&::after {
 			background-image: linear-gradient(to right, transparent 0, white 100%);
+			right: 0;
+		}
+
+		.navigation-menu::-webkit-scrollbar {
+			display: none;
 		}
 	}
 
 	.navigation-menu-item {
-		margin: 0 6px 0 -6px
+		margin: 0 6px 0 -6px;
+
+		&:first-of-type {
+			padding-left: $size__site-gutter/2;
+			margin-left: 0;
+		}
+
+		&:last-of-type {
+			padding-right: $size__site-gutter/2;
+			margin-right: 0;
+		}
 	}
 
 	.navigation-menu-link {
