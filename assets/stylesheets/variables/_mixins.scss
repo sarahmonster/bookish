@@ -217,6 +217,7 @@
     color: transparent;
     transition: .1s .2s;
     background-clip: text;
+    -webkit-background-clip: text;
 
   	&:hover {
 	    background-position: 0 0;

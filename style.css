@@ -166,7 +166,8 @@ a.article-title {
   color: transparent;
   -webkit-transition: .1s .2s;
   transition: .1s .2s;
-  background-clip: text; }
+  background-clip: text;
+  -webkit-background-clip: text; }
   a.article-title:hover {
     background-position: 0 0;
     color: transparent;
@@ -217,7 +218,8 @@ a.article-title {
   color: transparent;
   -webkit-transition: .1s .2s;
   transition: .1s .2s;
-  background-clip: text; }
+  background-clip: text;
+  -webkit-background-clip: text; }
   .article-content a:hover {
     background-position: 0 0;
     color: transparent;
