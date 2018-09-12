@@ -189,14 +189,14 @@ a.article-title {
   font-size: 7.3rem;
   font-family: lust-display, "Freight Text Pro", freight-text-pro, Georgia, serif;
   font-weight: 700;
-  line-height: 0.6;
-  margin: 16px 10px 0 -5px; }
+  line-height: 0.85;
+  margin: .12em .1em -.2em -.05em; }
   @media (min-width: 768px) {
     .article-single:not(.single-wanderlist-location) .article-content > p:first-of-type::first-letter,
     .tax-talks .article-content p:first-of-type:not(.wp-block-caption)::first-letter {
       font-size: 196.8px;
       font-size: 12.3rem;
-      margin-top: 16px; } }
+      margin: 0.08em .1em -.15em -.05em; } }
 
 .article-single:not(.single-wanderlist-location) .article-content > p:first-of-type::first-line,
 .tax-talks .article-content p:first-of-type:not(.wp-block-caption)::first-line {
@@ -681,13 +681,13 @@ p {
   font-size: 7.3rem;
   font-family: lust-display, "Freight Text Pro", freight-text-pro, Georgia, serif;
   font-weight: 700;
-  line-height: 0.6;
-  margin: 16px 10px 0 -5px; }
+  line-height: 0.85;
+  margin: .12em .1em -.2em -.05em; }
   @media (min-width: 768px) {
     .cap::first-letter {
       font-size: 196.8px;
       font-size: 12.3rem;
-      margin-top: 16px; } }
+      margin: 0.08em .1em -.15em -.05em; } }
 
 .cap::first-line {
   font-variant: small-caps;
@@ -843,13 +843,13 @@ p.has-drop-cap:not(.focus)::first-letter {
   font-size: 7.3rem;
   font-family: lust-display, "Freight Text Pro", freight-text-pro, Georgia, serif;
   font-weight: 700;
-  line-height: 0.6;
-  margin: 16px 10px 0 -5px; }
+  line-height: 0.85;
+  margin: .12em .1em -.2em -.05em; }
   @media (min-width: 768px) {
     p.has-drop-cap:not(.focus)::first-letter {
       font-size: 196.8px;
       font-size: 12.3rem;
-      margin-top: 16px; } }
+      margin: 0.08em .1em -.15em -.05em; } }
 
 p.has-drop-cap:not(.focus)::first-line {
   font-variant: small-caps;
