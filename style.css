@@ -67,12 +67,12 @@
       display: block;
       content: ''; }
     .navigation-menu::before {
-      background-image: -webkit-gradient(linear, right top, left top, color-stop(0, transparent), to(white));
-      background-image: linear-gradient(to left, transparent 0, white 100%);
+      background-image: -webkit-gradient(linear, right top, left top, color-stop(0, rgba(255, 255, 255, 0)), to(#ffffff));
+      background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 0, #ffffff 100%);
       left: 0; }
     .navigation-menu::after {
-      background-image: -webkit-gradient(linear, left top, right top, color-stop(0, transparent), to(white));
-      background-image: linear-gradient(to right, transparent 0, white 100%);
+      background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(255, 255, 255, 0)), to(#ffffff));
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #ffffff 100%);
       right: 0; }
     .navigation-menu .navigation-menu::-webkit-scrollbar {
       display: none; }
@@ -196,7 +196,7 @@ a.article-title {
     .tax-talks .article-content p:first-of-type:not(.wp-block-caption)::first-letter {
       font-size: 196.8px;
       font-size: 12.3rem;
-      margin: 0.08em .1em -.15em -.05em; } }
+      margin: 0.08em .1em -.125em -.05em; } }
 
 .article-single:not(.single-wanderlist-location) .article-content > p:first-of-type::first-line,
 .tax-talks .article-content p:first-of-type:not(.wp-block-caption)::first-line {
@@ -687,7 +687,7 @@ p {
     .cap::first-letter {
       font-size: 196.8px;
       font-size: 12.3rem;
-      margin: 0.08em .1em -.15em -.05em; } }
+      margin: 0.08em .1em -.125em -.05em; } }
 
 .cap::first-line {
   font-variant: small-caps;
@@ -849,7 +849,7 @@ p.has-drop-cap:not(.focus)::first-letter {
     p.has-drop-cap:not(.focus)::first-letter {
       font-size: 196.8px;
       font-size: 12.3rem;
-      margin: 0.08em .1em -.15em -.05em; } }
+      margin: 0.08em .1em -.125em -.05em; } }
 
 p.has-drop-cap:not(.focus)::first-line {
   font-variant: small-caps;

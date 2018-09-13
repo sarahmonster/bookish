@@ -85,12 +85,12 @@
 		}
 
 		&::before {
-			background-image: linear-gradient(to left, transparent 0, white 100%);
+			background-image: linear-gradient(to left, rgba($color__background-body, 0) 0, $color__background-body 100%);
 			left: 0;
 		}
 
 		&::after {
-			background-image: linear-gradient(to right, transparent 0, white 100%);
+			background-image: linear-gradient(to right, rgba($color__background-body, 0) 0, $color__background-body 100%);
 			right: 0;
 		}
 
